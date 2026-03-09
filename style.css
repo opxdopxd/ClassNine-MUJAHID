@@ -1,0 +1,429 @@
+/* --- ১. কালার এবং ভেরিয়েবল সেটিংস --- */
+:root {
+    --primary-color: #2c3e50;    
+    --accent-color: #e74c3c;     
+    --bg-color: #f4f7f6;         
+    --card-bg: #ffffff;          
+    --text-main: #333333;        
+    --footer-bg: #1a252f;
+    --wa-green: #25d366;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- ২. বেসিক সেটিংস --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; overflow-x: hidden; }
+
+/* --- ৩. অ্যানিমেশন --- */
+@keyframes softFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); } 
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@keyframes wa-ring {
+    0% { transform: rotate(0deg) scale(1); }
+    10% { transform: rotate(-15deg) scale(1.2); }
+    20% { transform: rotate(15deg) scale(1.2); }
+    30% { transform: rotate(-15deg) scale(1.2); }
+    40% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* MUJAHID নামটুকুর জন্য চূড়ান্ত ফিক্স */
+.moving-name {
+    display: inline-block !important; 
+    font-weight: 800;
+    color: var(--accent-color);
+    animation: softFloat 3s ease-in-out infinite !important;
+    cursor: pointer;
+}
+
+/* টাইটেল স্টাইল (এখানেই সাইজ বড় করা হয়েছে) */
+.floating-title { 
+    text-align: center; 
+    font-size: 3.5rem; /* পিসিতে অনেক বড় দেখাবে */
+    color: var(--primary-color); 
+    margin-bottom: 5px !important; /* টাইপিং টেক্সটের সাথে গ্যাপ কমানো হয়েছে */
+    animation: softFloat 4s ease-in-out infinite; 
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+/* --- ৪. ন্যাভবার --- */
+.navbar { 
+    background: var(--primary-color); 
+    padding: 0 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    height: 70px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.logo { color: white; font-size: 1.8rem; font-weight: 800; font-family: 'Montserrat'; cursor: pointer; }
+.logo span { color: var(--accent-color); }
+
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li { margin-left: 25px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-color); }
+
+.menu-icon { display: none; font-size: 1.6rem; color: white; cursor: pointer; }
+
+/* --- ৫. হোম পেজ ও টাইপিং --- */
+.hero { padding: 20px 20px; text-align: center; } 
+
+.typing-container { 
+    min-height: 70px; /* গ্যাপ আরও কমানো হয়েছে */
+    margin-bottom: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#typing-text {
+    white-space: pre-line;
+    line-height: 1.6;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    max-width: 850px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.dashboard-grid .dash-card:last-child {
+    grid-column: span 2;
+    justify-self: center;
+    width: 50%;
+}
+
+.dash-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 4px solid #ddd;
+    text-align: center;
+}
+
+.dash-card:hover { 
+    transform: translateY(-8px); 
+    background: var(--primary-color);
+    border-bottom-color: var(--accent-color);
+}
+.dash-card:hover h3, .dash-card:hover i { color: white; }
+.dash-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px; transition: 0.3s; }
+
+/* --- ৬. টেবিল স্টাইল --- */
+.card-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.styled-table, .routine-styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.styled-table th, .routine-styled-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.styled-table td, .routine-styled-table td {
+    background: #fdfdfd;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.wa-link i {
+    color: var(--wa-green);
+    font-size: 1.6rem;
+    display: inline-block;
+    animation: wa-ring 1.5s ease-in-out infinite;
+}
+
+/* --- ৭. নোটস ও বই --- */
+.grid-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu-btn {
+    background: white;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 250px;
+}
+
+.menu-btn:hover {
+    background: var(--accent-color) !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* --- ৮. Back to Top --- */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#backToTop i {
+    animation: bounce 2s infinite;
+}
+
+/* --- ৯. ফুটার --- */
+.main-footer { 
+    background: var(--footer-bg); 
+    color: #bdc3c7; 
+    padding: 25px 5% 15px;
+    margin-top: 40px;
+}
+
+.footer-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.footer-links li { margin-bottom: 8px; transition: 0.3s; }
+.footer-links li:hover { transform: translateX(10px); }
+.footer-links a { color: #bdc3c7; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--accent-color);
+    transform: rotate(360deg);
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* --- ১০. প্রিমিয়াম মোবাইল রেসপন্সিভনেস --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding: 0 20px;
+        height: 60px; /* মোবাইলে ন্যাভবার একটু স্লিম রাখলে ভালো লাগে */
+    }
+
+    .menu-icon { 
+        display: block !important;
+        cursor: pointer;
+        font-size: 1.4rem;
+        z-index: 2000; /* আইকন যেন মেনুর উপরে থাকে */
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; 
+        top: 0;
+        background: var(--primary-color);
+        width: 60%; /* ৫০% এর চেয়ে ৬০% দিলে টেক্সটগুলো সুন্দর ধরে */
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 20px 20px; /* ওপরের দিকে জায়গা রাখা হয়েছে আইকনের জন্য */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+        border-radius: 20px 0 0 20px; /* বাম পাশের কোণা রাউন্ড করলে প্রিমিয়াম লাগে */
+    }
+
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 15px;
+        font-size: 1rem;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    /* হোভার বা টাচ করলে হালকা হাইলাইট */
+    .nav-links a:active, .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-color);
+    }
+
+    /* মোবাইলে টাইটেল অ্যাডজাস্টমেন্ট */
+    .floating-title {
+        font-size: 1.8rem !important;
+        margin-top: 20px;
+    }
+
+    /* রুটিন টেবিল কন্টেইনার ফিক্স */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* সেকশন পরিবর্তন স্মুথ করা */
+.content-section {
+    display: none;
+    padding: 30px 15px;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- মোবাইল রুটিন ও কুইক লিঙ্ক ফিক্স --- */
+@media screen and (max-width: 768px) {
+    /* রুটিন টেবিলকে ডানে-বামে সরানোর ব্যবস্থা (Scrollable) */
+    .card-box {
+        overflow-x: auto;
+        padding: 15px; /* মোবাইলে প্যাডিং একটু কমানো */
+    }
+
+    .routine-styled-table, .styled-table {
+        min-width: 500px; /* টেবিল যেন একদম চ্যাপ্টা না হয়ে যায় */
+        font-size: 0.85rem;
+    }
+
+    /* কুইক লিঙ্ক ফিক্স */
+    .footer-links a {
+        font-size: 0.85rem;
+        gap: 5px; /* চিহ্নের সাথে লেখার দূরত্ব কমানো */
+        display: flex;
+        align-items: center;
+        white-space: nowrap; /* লেখা যেন ভেঙে নিচে না যায় */
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+}
+/* =========================================
+   ১১. ফুটার নিচের ফাঁকা অংশ দূর করার ফিক্স
+   ========================================= */
+
+/* পুরো পেজকে একটি ফ্লেক্সিবল কন্টেইনার বানানো হচ্ছে */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* মেইন কন্টেন্ট যতটুকু জায়গা দরকার তা নেবে এবং ফুটারকে নিচে ঠেলে দেবে */
+main, .hero, .content-section.active {
+    flex: 1 0 auto;
+}
+
+/* ফুটার সবসময় নিচেই থাকবে */
+.main-footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+/* মোবাইল রেসপন্সিভনেসেও যেন কন্টেন্ট ভেঙে না যায় */
+@media screen and (max-width: 768px) {
+    .content-section {
+        min-height: calc(100vh - 350px); /* মোবাইলে কন্টেন্ট কম থাকলেও ফুটার নিচে থাকবে */
+    }
+}
