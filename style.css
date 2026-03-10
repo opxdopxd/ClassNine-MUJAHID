@@ -689,25 +689,37 @@ body.dark-theme { background-color: #1a1a1a; color: #ffffff; }
 .content-section { display: none; padding: 30px 15px; }
 .content-section.active { display: block; animation: fadeIn 0.4s ease; }
 
-/* লোগো অ্যানিমেশন */
-.logo {
+/* লোগো ডিজাইন - একদম স্থির ও প্রিমিয়াম */
+.logo { 
+    color: white; 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    font-family: 'Montserrat', sans-serif; 
+    cursor: pointer; 
+    text-decoration: none;
     display: inline-block;
-    transition: var(--transition);
+    transition: 0.3s ease; /* শুধু কালার বা শ্যাডোর পরিবর্তনের জন্য */
 }
 
-/* লোগো পালস ইফেক্ট - সবসময় হালকা নড়বে */
-.logo span {
-    display: inline-block;
-    animation: logoPulse 2s infinite ease-in-out;
+/* লোগোর ভেতরের স্প্যান (যেমন: ASANI এর S বা শেষ অংশ) */
+.logo span { 
+    color: var(--accent-color); 
 }
 
-@keyframes logoPulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-/* মাউস নিলে লোগো ৩ডি স্টাইলে ঘুরবে */
+/* মাউস নিলে কোনো নড়াচড়া হবে না, শুধু হালকা গ্লো হবে */
 .logo:hover {
-    transform: perspective(500px) rotateY(20deg);
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+    opacity: 0.9;
+}
+
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); /* ২টা কলাম তৈরি করবে */
+    gap: 10px; /* লিঙ্কগুলোর মাঝে ফাঁকা জায়গা */
+    padding: 0;
+    list-style: none;
+}
+
+.footer-grid li {
+    margin: 0 !important; /* আগের মার্জিন থাকলে সেটা সরিয়ে দেবে */
 }
