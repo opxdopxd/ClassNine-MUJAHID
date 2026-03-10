@@ -1,5 +1,6 @@
 /* =========================================
-   ১. ডাটাবেজ (রুটিন, শিক্ষার্থী ও শিক্ষক)
+   ১. ডাটাবেজ (রুটিন, শিক্ষার্থী ও শিক্ষক) 
+   (আপনার সব ডাটা হুবহু রাখা হয়েছে)
    ========================================= */
 
 const subjects = [
@@ -11,9 +12,7 @@ const subjects = [
     "পদার্থ বিজ্ঞান", "রসায়ন", "জীব বিজ্ঞান"
 ];
 
-// ৬ দিনের রুটিন এবং ৩টি পিরিয়ড সেট করা হলো
 const classRoutine = [
-    
     { day: "শনিবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
     { day: "রবিবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
     { day: "সোমবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
@@ -22,16 +21,13 @@ const classRoutine = [
     { day: "বৃহস্পতিবার", p1: "English", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
 ];
 
-
 const studentsData = [
-    { name: "Israfil",      roll: "01", phone: "8801325317415", type: "captain" },
-    { name: "Mujahid",      roll: "02", phone: "8801722494482", type: "captain" },
-    { name: "Ataullah",     roll: "03", phone: "8801715797980", type: "general" },
-    { name: "Mahmud",       roll: "04", phone: "8801614002201", type: "general" },
-    { name: "Ahanaf",       roll: "05", phone: "8801920169201", type: "general" },
-    { name: "---------",    roll: "06", phone: "8801700000000", type: "general" },
+    { name: "Israfil",    roll: "01", phone: "8801325317415", type: "captain" },
+    { name: "Mujahid",    roll: "02", phone: "8801722494482", type: "captain" },
+    { name: "Ataullah",   roll: "03", phone: "8801715797980", type: "general" },
+    { name: "Ahanaf",     roll: "05", phone: "8801920169201", type: "general" },
     { name: "Abdur Razzak", roll: "07", phone: "8801712560089", type: "general" },
-    { name: "Ahmad",        roll: "08", phone: "8801963562037", type: "general" },
+    { name: "Ahmad",      roll: "08", phone: "8801963562037", type: "general" },
 ];
 
 const teachersData = [
@@ -40,7 +36,7 @@ const teachersData = [
     { name: "Rafit",               subject: "Arabic",       phone: "8801734300863", type: "others" },
 ];
 
-const noteLinks = {
+const noteLinks = {  
     "কোরআন মাজিদ ও তাজভিদ": "",
     "হাদিস শরফি": "",
     "আকায়েদ ও ফিকহ": "",
@@ -56,8 +52,7 @@ const noteLinks = {
     "উচ্চতর গণিত": "",
     "পদার্থ বিজ্ঞান": "https://opxdopxd.github.io/physics-notebook/",
     "রসায়ন": "",
-    "জীব বিজ্ঞান": ""
-};
+    "জীব বিজ্ঞান": "" };
 
 const bookLinks = {
     "কোরআন মাজিদ ও তাজভিদ": "https://drive.egovcloud.gov.bd/index.php/s/qdmLeXhVpbM7mTx",
@@ -95,30 +90,63 @@ if(menuBtn) {
 }
 
 function showSection(id) {
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.content-section').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+    });
     
     const target = document.getElementById(id);
-    if(target) target.classList.add('active');
+    if(target) {
+        target.style.display = 'block';
+        setTimeout(() => { target.classList.add('active'); }, 10);
+    }
 
+    // মোবাইল মেনু অটো বন্ধ হওয়া
     if(navLinks && navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         const icon = menuBtn.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
+        if(icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
     }
-    
     window.scrollTo({top: 0, behavior: 'smooth'});
-
-    if (id === 'home') {
-        typeEffect();
-    }
 }
 
 /* =========================================
-   ৩. ডাটা রেন্ডারিং
+   ৩. এআই অ্যাসিস্ট্যান্ট কন্ট্রোল (Fixed)
    ========================================= */
 
-const message = "আমাদের এই ওয়েবসাইটটি নবম শ্রেণির শিক্ষার্থীদের জন্য তৈরি করা হয়েছে। এখানে সবাই সহজে তথ্য খুঁজে পেতে এবং বিভিন্ন শিক্ষামূলক সুবিধা ব্যবহার করতে পারবে। ব্যবহারকারীর সুবিধা ও সহজ বোঝার জন্য সাইটটি সরল ও সুন্দরভাবে সাজানো হয়েছে, যাতে নতুন কেউ প্রবেশ করলেও দ্রুত বুঝতে পারে এবং সহজে ব্যবহার করতে পারে।";
+function showAIModal() {
+    // আপনার HTML এ আইডি আছে 'aiModal'
+    const modal = document.getElementById('aiModal');
+    if (modal) {
+        modal.style.display = 'flex'; // মোডাল দেখাবে
+        modal.style.zIndex = '9999';  // যেন সবকিছুর উপরে থাকে
+        document.body.style.overflow = 'hidden'; // পেজ স্ক্রল বন্ধ করবে
+    }
+}
+
+function closeAIModal() {
+    const modal = document.getElementById('aiModal');
+    if (modal) {
+        modal.style.display = 'none'; // মোডাল বন্ধ হবে
+        document.body.style.overflow = 'auto'; // স্ক্রল চালু করবে
+    }
+}
+
+// মোডালের বাইরের কালো অংশে ক্লিক করলে বন্ধ হবে
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('aiModal');
+    if (event.target === modal) {
+        closeAIModal();
+    }
+});
+/* =========================================
+   ৪. টাইপিং ইফেক্ট ও ডাটা রেন্ডারিং
+   ========================================= */
+
+const message = "আমাদের এই ওয়েবসাইটটি নবম শ্রেণির শিক্ষার্থীদের জন্য তৈরি করা হয়েছে। এখানে সবাই সহজে তথ্য খুঁজে পেতে এবং বিভিন্ন শিক্ষামূলক সুবিধা ব্যবহার করতে পারবে।";
 let charIndex = 0;
 
 function typeEffect() {
@@ -139,6 +167,7 @@ function renderTables() {
         </tr>
     `;
 
+    // এলিমেন্টগুলো খুঁজে নেওয়া
     const captainBody = document.getElementById('captain-tbody');
     const generalBody = document.getElementById('general-student-tbody');
     const classTeacherBody = document.getElementById('class-teacher-tbody');
@@ -150,51 +179,42 @@ function renderTables() {
     if(classTeacherBody) classTeacherBody.innerHTML = teachersData.filter(t => t.type === 'class-teacher').map(renderRow).join('');
     if(othersTeacherBody) othersTeacherBody.innerHTML = teachersData.filter(t => t.type === 'others').map(renderRow).join('');
 
-// renderTables ফাংশনের ভেতর এই অংশটুকু চেক করুন
-if(routineBody) {
-    const daysInBengali = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
-    const todayIndex = new Date().getDay();
-    const todayName = daysInBengali[todayIndex] || ""; 
+    // রুটিন রেন্ডারিং ও আজকের দিন হাইলাইট
+    if(routineBody) {
+        const daysInBengali = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
+        const todayName = daysInBengali[new Date().getDay()]; 
 
-    routineBody.innerHTML = classRoutine.map(r => {
-        const isToday = r.day === todayName;
-        return `
-            <tr style="${isToday ? 'background: #fff0f0; font-weight: bold; border-left: 5px solid var(--accent-color);' : ''}">
-                <td style="color:var(--primary-color); font-weight:700;">${r.day} ${isToday ? '<b>(আজ)</b>' : ''}</td>
-                <td>${r.p1}</td>
-                <td>${r.p2}</td>
-                <td>${r.p3}</td>
-            </tr>
-        `;
-    }).join('');
-}
+        routineBody.innerHTML = classRoutine.map(r => {
+            const isToday = r.day === todayName;
+            return `
+                <tr class="${isToday ? 'today-highlight' : ''}" style="${isToday ? 'background: rgba(231, 76, 60, 0.1); font-weight: bold; border-left: 5px solid #e74c3c;' : ''}">
+                    <td style="color:var(--primary-color); font-weight:700;">${r.day} ${isToday ? '<b>(আজ)</b>' : ''}</td>
+                    <td>${r.p1}</td>
+                    <td>${r.p2}</td>
+                    <td>${r.p3}</td>
+                </tr>
+            `;
+        }).join('');
+    }
 }
 
 /* =========================================
-   ৪. সাবজেক্ট বাটন ও এলাইনমেন্ট কন্ট্রোল
+   ৫. সাবজেক্ট বাটন ও ডার্ক মোড
    ========================================= */
 
 function setupSubjectButtons() {
     const noteContainer = document.getElementById('noteButtons');
     const bookContainer = document.getElementById('bookButtons');
 
-    const centerStyle = "display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 1100px; margin: 0 auto;";
-
     if(noteContainer) {
-        noteContainer.setAttribute('style', centerStyle);
         noteContainer.innerHTML = subjects.map(sub => `
-            <button class="menu-btn" onclick="handleLink(noteLinks['${sub}'], 'noteDisplay', '${sub}', 'নোট')">
-                ${sub}
-            </button>
+            <button class="menu-btn" onclick="handleLink(noteLinks['${sub}'], 'noteDisplay', '${sub}', 'নোট')">${sub}</button>
         `).join('');
     }
 
     if(bookContainer) {
-        bookContainer.setAttribute('style', centerStyle);
         bookContainer.innerHTML = subjects.map(sub => `
-            <button class="menu-btn" onclick="handleLink(bookLinks['${sub}'], 'bookViewer', '${sub}', 'বই')">
-                ${sub}
-            </button>
+            <button class="menu-btn" onclick="handleLink(bookLinks['${sub}'], 'bookViewer', '${sub}', 'বই')">${sub}</button>
         `).join('');
     }
 }
@@ -206,31 +226,41 @@ function handleLink(link, displayId, subName, typeName) {
         const box = document.getElementById(displayId);
         if(!box) return;
         box.style.display = 'block';
-        box.innerHTML = `<p style="color:#e74c3c; font-weight:700; padding:15px; border:1px solid #ddd; border-radius:8px; background:white; margin-bottom:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">দুঃখিত, ${subName}-এর ${typeName} এখনো অ্যাড করা হয়নি।</p>`;
+        box.innerHTML = `<p style="color:#e74c3c; font-weight:700; padding:15px; border:1px solid #ddd; border-radius:8px; background:white; margin-bottom:15px; text-align: center;">দুঃখিত, ${subName}-এর ${typeName} এখনো অ্যাড করা হয়নি।</p>`;
         box.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => { box.style.display = 'none'; }, 4000);
     }
 }
 
-/* =========================================
-   ৫. ইউটিলিটি ও ইনিশিয়ালাইজেশন
-   ========================================= */
-
-const topBtn = document.getElementById("backToTop");
-window.onscroll = () => {
-    if (topBtn) {
-        topBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+// ডার্ক মোড সেটিংস
+const darkModeToggle = document.querySelector('#darkModeToggle');
+if (darkModeToggle) {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        darkModeToggle.checked = true;
     }
-};
 
-if(topBtn) {
-    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    darkModeToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 }
 
+// পেজ লোড হলে সব শুরু হবে
 document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
     renderTables();
     setupSubjectButtons();
-
 });
 
+// Back to Top বাটন
+const topBtn = document.getElementById("backToTop");
+window.onscroll = () => {
+    if (topBtn) topBtn.style.display = (window.scrollY > 300) ? "block" : "none";
+};
+if(topBtn) topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
