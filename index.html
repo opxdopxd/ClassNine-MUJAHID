@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClassNine | MUJAHID</title>
 
-    <link rel="icon" type="image/png" sizes="192x192" href="logo.jpg">
-    <link rel="icon" type="image/png" sizes="512x512" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logojpg">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo.png.jpg">
+    <link rel="icon" type="image/png" sizes="512x512" href="logo.png.jpg">
+    <link rel="apple-touch-icon" href="logo.png.jpg">
     <meta name="theme-color" content="#2c3e50">
     <link rel="manifest" href="manifest.json">
 
@@ -18,36 +18,26 @@
 </head>
 <body>
 
-<link rel="icon" type="image/png" sizes="192x192" href="logo.jpg">
-<link rel="icon" type="image/png" sizes="512x512" href="logo.jpg">
-<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="logo.png">
+
+<link rel="apple-touch-icon" href="logo.png">
+
 <meta name="theme-color" content="#2c3e50">
 
+
 <nav class="navbar">
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="darkModeToggle">
-            <input type="checkbox" id="darkModeToggle" />
-            <div class="slider round">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </div>
-        </label>
-    </div>
-    
     <div class="logo">Class<span>Nine</span></div>
     <div class="menu-icon" id="menuBtn">
         <i class="fas fa-bars"></i>
     </div>
-
     <ul class="nav-links" id="navLinks">
-        <li><a href="javascript:void(0)" onclick="showSection('home')"> Home</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('students')"> Students</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('teachers')"> Teachers</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('notes')"> Notes</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('books')"> Books</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('routine')"> Routine</a></li>
-        <li><a href="javascript:void(0)" onclick="showAIModal()"> AI Assistant</a></li>
-        <li><a href="https://translate.google.com" target="_blank"> Translator</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('students')">Students</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('teachers')">Teachers</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('notes')">Notes</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('books')">Books</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('routine')">Routine</a></li>
     </ul>
 </nav>
 
@@ -63,60 +53,46 @@
                 <i class="fas fa-user-graduate"></i>
                 <h3>Students</h3>
             </div>
-            
             <div class="dash-card" onclick="showSection('teachers')">
                 <i class="fas fa-chalkboard-teacher"></i>
                 <h3>Teachers</h3>
             </div>
-
             <div class="dash-card" onclick="showSection('notes')">
                 <i class="fas fa-file-pdf"></i>
                 <h3>Notes</h3>
             </div>
-
             <div class="dash-card" onclick="showSection('books')">
                 <i class="fas fa-book"></i>
                 <h3>Books</h3>
             </div>
-
             <div class="dash-card routine-card" onclick="showSection('routine')">
                 <i class="fas fa-calendar-alt"></i>
                 <h3>Routine</h3>
             </div>
-
-            <div class="dash-card ai-main-card" onclick="showAIModal()">
-                <i class="fas fa-robot"></i>
-                <h3>AI Assistant</h3>
-            </div>
-
-            <div class="dash-card translator-card" onclick="window.open('https://translate.google.com', '_blank')">
-                <i class="fas fa-language"></i>
-                <h3>Translator</h3>
-            </div>
-
-            <div class="dash-card" onclick="showSection('notice')">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Notice</h3>
-            </div>
         </div>
-
-
         
         <div class="dev-line-home">
             Developed with by 
-            <div class="logo"><span class="moving-name">MUJAHID</span></div>
+            <div class="logo">
+    <span class="moving-name">MUJAHID</span>
+</div>
         </div>
     </div>
 </section>
 
 <section id="students" class="content-section">
     <h2 class="floating-title">শিক্ষার্থী তালিকা</h2>
+    
     <div class="card-box info-table-card">
         <h3 class="section-title">শ্রেণি ক্যাপ্টেন</h3>
         <div class="table-container">
             <table class="styled-table">
                 <thead>
-                    <tr><th>নাম</th><th>রোল</th><th>WhatsApp</th></tr>
+                    <tr>
+                        <th>নাম</th>
+                        <th>রোল</th>
+                        <th>WhatsApp</th>
+                    </tr>
                 </thead>
                 <tbody id="captain-tbody"></tbody>
             </table>
@@ -128,7 +104,11 @@
         <div class="table-container">
             <table class="styled-table">
                 <thead>
-                    <tr><th>নাম</th><th>রোল</th><th>WhatsApp</th></tr>
+                    <tr>
+                        <th>নাম</th>
+                        <th>রোল</th>
+                        <th>WhatsApp</th>
+                    </tr>
                 </thead>
                 <tbody id="general-student-tbody"></tbody>
             </table>
@@ -138,12 +118,17 @@
 
 <section id="teachers" class="content-section">
     <h2 class="floating-title">শিক্ষকদের তালিকা</h2>
+    
     <div class="card-box info-table-card">
         <h3 class="section-title">শ্রেণি শিক্ষক</h3>
         <div class="table-container">
             <table class="styled-table">
                 <thead>
-                    <tr><th>নাম</th><th>বিষয়</th><th>WhatsApp</th></tr>
+                    <tr>
+                        <th>নাম</th>
+                        <th>বিষয়</th>
+                        <th>WhatsApp</th>
+                    </tr>
                 </thead>
                 <tbody id="class-teacher-tbody"></tbody>
             </table>
@@ -155,7 +140,11 @@
         <div class="table-container">
             <table class="styled-table">
                 <thead>
-                    <tr><th>নাম</th><th>বিষয়</th><th>WhatsApp</th></tr>
+                    <tr>
+                        <th>নাম</th>
+                        <th>বিষয়</th>
+                        <th>WhatsApp</th>
+                    </tr>
                 </thead>
                 <tbody id="others-teacher-tbody"></tbody>
             </table>
@@ -181,7 +170,13 @@
         <div class="table-container">
             <table id="routineTable" class="routine-styled-table">
                 <thead>
-                    <tr><th>দিন</th><th>১ম</th><th>২য়</th><th>৩য়</th></tr>
+                    <tr>
+                        <th>দিন</th>
+                        <th>১ম</th>
+                        <th>২য়</th>
+                        <th>৩য়</th>
+                        
+                    </tr>
                 </thead>
                 <tbody></tbody>
             </table>
@@ -197,24 +192,6 @@
 <button id="backToTop" class="bounce-btn" title="উপরে যান">
     <i class="fas fa-arrow-up"></i>
 </button>
-
-<section id="notice" class="content-section" style="display: none;">
-    <div class="card-box">
-        <h2 class="floating-title"><i class="fas fa-bullhorn"></i> নোটিশ বোর্ড</h2>
-        <div class="notice-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 5px solid #3498db; margin-bottom: 15px; text-align: left;">
-            <small style="color: #888;"><i class="far fa-calendar-alt"></i> ২৬ রমজান, ২০২৬</small>
-            <h3 style="margin: 5px 0; color: #3498db;">পবিত্র রমজান ও ঈদুল ফিতর উপলক্ষে ছুটির বিজ্ঞপ্তি</h3>
-             সকল ছাত্র-ছাত্রী ও অভিভাবকদের অবগতির জন্য জানানো যাচ্ছে যে, আগামী <strong>২৬শে রমজান</strong> থেকে পবিত্র ঈদুল ফিতর উপলক্ষে কোচিং এর সকল কার্যক্রম বন্ধ থাকবে। 
-            <br><br>
-            ঈদের ছুটি শেষে বিদ্যালয় পুনরায় খোলার তারিখ নোটিশ বোর্ডের মাধ্যমে যথাসময়ে জানিয়ে দেওয়া হবে। সবাইকে অগ্রিম ঈদ মোবারক!
-        </div>
-        <div class="btn-center" style="margin-top: 20px;">
-            <button class="menu-btn" onclick="showSection('home')">
-                <i class="fas fa-arrow-left"></i> ফিরে যান
-            </button>
-        </div>
-    </div>
-</section>
     
 <footer class="main-footer">
     <div class="footer-container">
@@ -235,8 +212,12 @@
         <div class="footer-section connect-section animate-footer-section">
             <h4>Connect with us</h4>
             <div class="social-icons">
-                <a href="https://facebook.com" target="_blank" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://github.com" target="_blank" class="github" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://facebook.com" target="_blank" class="facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="github" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -250,21 +231,6 @@
         </div>
     </div>
 </footer>
-
-<div id="aiModal" class="ai-modal">
-    <div class="ai-modal-content">
-        <span class="close-btn" onclick="closeAIModal()">&times;</span>
-        <h3 class="modal-title">AI Assistant</h3>
-        <div class="ai-options-flex">
-            <a href="https://chatgpt.com" target="_blank" class="ai-choice chatgpt">
-                <i class="fas fa-robot"></i> ChatGPT
-            </a>
-            <a href="https://gemini.google.com" target="_blank" class="ai-choice gemini">
-                <i class="fas fa-brain"></i> Gemini
-            </a>
-        </div>
-    </div>
-</div>
 
 <script src="script.js"></script>
 </body>
