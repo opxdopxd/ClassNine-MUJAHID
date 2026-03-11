@@ -1,14 +1,11 @@
 {
   "name": "Class Nine Digital Classroom",
-  "short_name": "Asani Class 9",
-  "description": "নবম শ্রেণির শিক্ষার্থীদের জন্য তৈরি একটি স্মার্ট ডিজিটাল তথ্যভাণ্ডার ও শিক্ষাসহায়ক অ্যাপ।",
-  "start_url": "/index.html",
-  "scope": "/",
+  "short_name": "ClassNine",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000000",
-  "theme_color": "#2c3e50",
-  "categories": ["education", "productivity"],
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "logo.jpg",
@@ -18,38 +15,15 @@
     },
     {
       "src": "logo.jpg",
-      "sizes": "192x192",
+      "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "maskable"
+      "purpose": "any"
     },
     {
       "src": "logo.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "any"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "ক্লাস রুটিন",
-      "short_name": "রুটিন",
-      "description": "আজকের ক্লাসের সময়সূচী দেখুন",
-      "url": "/index.html#routine",
-      "icons": [{ "src": "logo.jpg", "sizes": "192x192" }]
-    },
-    {
-      "name": "নোটস ও সাজেশন",
-      "short_name": "নোটস",
-      "description": "সব বিষয়ের নোটস ও সাজেশন",
-      "url": "/index.html#notes",
-      "icons": [{ "src": "logo.jpg", "sizes": "192x192" }]
-    },
-    {
-      "name": "পাঠ্যবইসমূহ",
-      "short_name": "বই",
-      "description": "অনলাইন ডিজিটাল টেক্সটবুক",
-      "url": "/index.html#books",
-      "icons": [{ "src": "logo.jpg", "sizes": "192x192" }]
+      "purpose": "maskable"
     }
   ]
 }
