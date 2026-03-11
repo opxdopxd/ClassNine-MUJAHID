@@ -1,56 +1,65 @@
 {
   "name": "Class Nine Digital Classroom",
   "short_name": "ClassNine",
-  "description": "নবম শ্রেণির শিক্ষার্থীদের জন্য তৈরি একটি ডিজিটাল তথ্যভাণ্ডার।",
-  "start_url": "index.html",
+  "description": "নবম শ্রেণির শিক্ষার্থীদের জন্য একটি আধুনিক ও সহজতর ডিজিটাল তথ্যভাণ্ডার।",
+  "categories": ["education", "books"],
+  "start_url": "/index.html",
   "display": "standalone",
+  "id": "com.classnine.digitalclassroom",
   "orientation": "portrait",
-  "background_color": "#000000",
+  "background_color": "#ffffff",
   "theme_color": "#2c3e50",
+  "lang": "bn-BD",
+  "dir": "ltr",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
-      "src": "logo.jpg",
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
   "shortcuts": [
     {
       "name": "নোটস দেখুন",
-      "url": "index.html#notes",
-      "icons": [
-        {
-          "src": "logo.jpg",
-          "sizes": "192x192"
-        }
-      ]
+      "short_name": "নোটস",
+      "url": "/index.html#notes",
+      "description": "আপনার প্রয়োজনীয় ক্লাস নোটগুলো খুঁজে নিন",
+      "icons": [{ "src": "icons/notes.png", "sizes": "192x192" }]
     },
     {
       "name": "আজকের রুটিন",
-      "url": "index.html#routine",
-      "icons": [
-        {
-          "src": "logo.jpg",
-          "sizes": "192x192"
-        }
-      ]
+      "short_name": "রুটিন",
+      "url": "/index.html#routine",
+      "description": "আজকের ক্লাসের সময়সূচী দেখুন",
+      "icons": [{ "src": "icons/routine.png", "sizes": "192x192" }]
     },
     {
       "name": "বইসমূহ",
-      "url": "index.html#books",
-      "icons": [
-        {
-          "src": "logo.jpg",
-          "sizes": "192x192"
-        }
-      ]
+      "short_name": "বই",
+      "url": "/index.html#books",
+      "description": "সকল পাঠ্যবই এক জায়গায়",
+      "icons": [{ "src": "icons/books.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }
