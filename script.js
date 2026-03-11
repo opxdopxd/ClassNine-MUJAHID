@@ -50,7 +50,7 @@ const noteLinks = {
     "গণিত": "",
     "বাংলাদেশ ও বিশ্ব পরিচয়": "",
     "উচ্চতর গণিত": "",
-    "পদার্থ বিজ্ঞান": "",
+    "পদার্থ বিজ্ঞান": "https://opxdopxd.github.io/physics-notebook/",
     "রসায়ন": "",
     "জীব বিজ্ঞান": "" };
 
@@ -264,4 +264,3 @@ window.onscroll = () => {
     if (topBtn) topBtn.style.display = (window.scrollY > 300) ? "block" : "none";
 };
 if(topBtn) topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
