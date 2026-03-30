@@ -13,12 +13,12 @@ const subjects = [
 ];
 
 const classRoutine = [
-    { day: "শনিবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
-    { day: "রবিবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
-    { day: "সোমবার", p1: "English", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
-    { day: "মঙ্গলবার", p1: "English", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
-    { day: "বুধবার", p1: "English", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
-    { day: "বৃহস্পতিবার", p1: "English", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
+    { day: "শনিবার", p1: "English-Bangla", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
+    { day: "রবিবার", p1: "English-Bangla", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
+    { day: "সোমবার", p1: "English-Bangla", p2: "Higher Math-Chemistry-Biology", p3: "Quran-Arabic 1st" },
+    { day: "মঙ্গলবার", p1: "English-Bangla", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
+    { day: "বুধবার", p1: "English-Bangla", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
+    { day: "বৃহস্পতিবার", p1: "English-Bangla", p2: "General Math-Physics-Biology", p3: "Hadis-Arabic 2nd" },
 ];
 
 const studentsData = [
