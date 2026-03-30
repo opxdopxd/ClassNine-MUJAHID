@@ -25,9 +25,9 @@ const studentsData = [
     { name: "Israfil",    roll: "01", phone: "8801325317415", type: "captain" },
     { name: "Mujahid",    roll: "02", phone: "8801722494482", type: "captain" },
     { name: "Ataullah",   roll: "03", phone: "8801715797980", type: "general" },
-    { name: "Ahanaf",     roll: "05", phone: "8801920169201", type: "general" },
-    { name: "Abdur Razzak", roll: "06", phone: "8801712560089", type: "general" },
-    { name: "Ahmad",      roll: "07", phone: "8801963562037", type: "general" },
+    { name: "Ahanaf",     roll: "04", phone: "8801920169201", type: "general" },
+    { name: "Abdur Razzak", roll: "05", phone: "8801712560089", type: "general" },
+    { name: "Ahmad",      roll: "06", phone: "8801963562037", type: "general" },
 ];
 
 const teachersData = [
